@@ -7,9 +7,9 @@
 
 struct Room {
 	char roomId[5];
-	int type; //Loai phÚng (1: –on, 2: –Ùi).
+	int type; //Loai ph√≤ng (1: √êon, 2: √ê√¥i).
 	double price;
-	int status; // Trang th·i (0: Trong, 1: –ang o, 2: Bao tri)
+	int status; // Trang th√°i (0: Trong, 1: √êang o, 2: Bao tri)
 };
 
 struct Booking {
@@ -127,8 +127,23 @@ void addRoom() {
     scanf("%lf", &newRoom.price);
 
     newRoom.status = 0; //Mac dinh la phong trong, hien tai phong chua duoc dat
-
+	printf("Trang thai: ");
+	switch(newRoom.status) {
+		case 0: 
+			printf("Trong\n");
+			break;
+		case 1:
+			printf("Dang o\n");
+			break;
+		case 2:
+			printf("Bao tri");
+			break;
+		default:
+			printf("Trang thai khong hop le\n");
+			break;
+	}	
     rooms[roomCount++] = newRoom;
+	
 
     printf("Them phong thanh cong!\n");
 }
@@ -173,3 +188,4 @@ void updateRoom() {
 	printf("Cap nhat thanh cong!");
 	
 }
+
